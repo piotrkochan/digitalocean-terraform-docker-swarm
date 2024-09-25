@@ -23,8 +23,8 @@ provider "digitalocean" {
 }
 
 # Create a new SSH key
-resource "digitalocean_ssh_key" "kafka_ssh_key" {
-  name       = "Kafka SSH Key"
+resource "digitalocean_ssh_key" "lab_ssh_key" {
+  name       = "Swarm hosts SSH Key"
   public_key = file("~/.ssh/do.pub")
 }
 
@@ -60,7 +60,7 @@ resource "digitalocean_droplet" "docker_swarm_node" {
   region   = "fra1"
   size     = "s-2vcpu-4gb"
   vpc_uuid = digitalocean_vpc.docker_swarm_vpc.id
-  ssh_keys = [digitalocean_ssh_key.kafka_ssh_key.fingerprint]
+  ssh_keys = [digitalocean_ssh_key.lab_ssh_key.fingerprint]
   tags     = [digitalocean_tag.docker_swarm.id]
 
   connection {
