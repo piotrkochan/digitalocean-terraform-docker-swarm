@@ -1,0 +1,8 @@
+# https://cloud.digitalocean.com/account/api/tokens
+do_token           = "dop_v1_......."
+
+# https://cloud.digitalocean.com/account/api/spaces
+storage_access_id  = "..."
+storage_secret_key = "..."
+
+my_ip              = "xx.xx.xx.xx" 
